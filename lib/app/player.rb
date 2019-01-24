@@ -8,3 +8,5 @@ class Player
     @avatar = avatar
   end
 end
+
+#la fonction play turn selectionne lavatar et choisis une case pour jouer 
