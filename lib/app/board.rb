@@ -79,8 +79,16 @@ end
 
       false
     end
-    def victory?
-      #TO DO : une méthode qui vérifie le plateau et indique s'il y a un vainqueur ou match nul
+    def victory_cross
+      return true if @board_array[0].value == ("X") && @board_array[4].value == ("X") && @board_array[8].value == ("X")
+      return true if @board_array[2].value == ("X") && @board_array[4].value == ("X") && @board_array[6].value == ("X") 
+      return true if @board_array[0].value == ("X") && @board_array[3].value == ("X") && @board_array[6].value == ("X")
+      return true if @board_array[1].value == ("X") && @board_array[4].value == ("X") && @board_array[7].value == ("X")
+      return true if @board_array[2].value == ("X") && @board_array[5].value == ("X") && @board_array[8].value == ("X")
+      return true if @board_array[0].value == ("X") && @board_array[1].value == ("X") && @board_array[2].value == ("X")
+      return true if @board_array[3].value == ("X") && @board_array[4].value == ("X") && @board_array[5].value == ("X")
+      return true if @board_array[6].value == ("X") && @board_array[7].value == ("X") && @board_array[8].value == ("X") 
+              
     end
 
   end
