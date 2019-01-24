@@ -8,27 +8,28 @@ class Game
 
 		@turn_number = 1
 
-		player1 = Player.new('X')
-		player2 = Player.new('O')
-
+		@@player1 = Player.new('X')
+		@@player2 = Player.new('O')
 
 	    @@board = Board.new
 
 	  	@@show  = Show.new
-
-	    @@show.show_board(@@board)
-		
 	end
 
 	def turns
 
 
+		current_player = @@player1
 		while true
-			@@board.play_turn('X')
-			@@show.show_board
-
-			puts @turn_number
+			@@board.play_turn(current_player.avatar)
+			#binding.pry
 			@turn_number += 1
+			if current_player.avatar == 'X'
+			  current_player = 	@@player2
+			else
+				current_player = @@player1
+			end
+
 		end
 		
 	end
