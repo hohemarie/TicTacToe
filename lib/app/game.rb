@@ -1,4 +1,3 @@
-require 'pry'
 require 'player'
 require 'board'
 
@@ -15,7 +14,6 @@ class Game
 	    @@board = Board.new
 
 	  	@@show  = Show.new
-
 	end
 
 	def turns
