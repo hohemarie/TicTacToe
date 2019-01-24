@@ -4,14 +4,21 @@ class BoardCase
 
   
 
+
+
   def initialize(value)
   	@value = value
 
+ master
     #TO DO : doit régler sa valeur, ainsi que son numéro de case
   end
 
   def change_value(value)
   	@value = value
+  end
+
+  def get_value
+    return @value
   end
   
 end

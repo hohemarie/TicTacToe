@@ -1,4 +1,3 @@
-require 'pry'
 require 'boardcase'
 require 'show'
 
@@ -20,27 +19,57 @@ class Board
 
 
   def play_turn(avatar)
-    puts "Choisis une case : "
-    num = gets.chomp.to_i
 
-    puts "Tour #{num}"
+    case_choice = ""
+    
+    while !case_choice.to_i.between?(1,9) do
+      puts "Choisis une case : "
+        case_choice = gets.chomp.to_i
+      end
 
-    @board_array[num].change_value(avatar)
-    Show.show_board(@board_array)
-    #binding pry
-    #TO DO : une méthode qui :
-    #1) demande au bon joueur ce qu'il souhaite faire
-    #2) change la BoardCase jouée en fonction de la valeur du joueur (X ou O)
+      @board_array[case_choice].change_value(avatar)
+      Show.show_board(@board_array)
+
+
+      #TO DO : une méthode qui :
+      #1) demande au bon joueur ce qu'il souhaite faire
+      #2) change la BoardCase jouée en fonction de la valeur du joueur (X ou O)
+    end
+
+    def update_array(array)
+      array = @board_array
+    end
+
+    def is_winning_board?
+      # rows
+      return true if @board_array[0].value == ("X") && @board_array[1].value == ("X") && @board_array[2].value == ("X")
+      return true if @board_array[3].value == ("X") && @board_array[4].value == ("X") && @board_array[5].value == ("X")
+      return true if @board_array[6].value == ("X") && @board_array[7].value == ("X") && @board_array[8].value == ("X")
+      return true if @board_array[0].value == ("O") && @board_array[1].value == ("O") && @board_array[2].value == ("O")
+      return true if @board_array[3].value == ("O") && @board_array[4].value == ("O") && @board_array[5].value == ("O")
+      return true if @board_array[6].value == ("O") && @board_array[7].value == ("O") && @board_array[8].value == ("O")
+
+
+      # columns
+      return true if @board_array[0].value == ("X") && @board_array[3].value == ("X") && @board_array[6].value == ("X")
+      return true if @board_array[1].value == ("X") && @board_array[4].value == ("X") && @board_array[7].value == ("X")
+      return true if @board_array[2].value == ("X") && @board_array[5].value == ("X") && @board_array[8].value == ("X")
+      return true if @board_array[0].value == ("O") && @board_array[3].value == ("O") && @board_array[6].value == ("O")
+      return true if @board_array[1].value == ("O") && @board_array[4].value == ("O") && @board_array[7].value == ("O")
+      return true if @board_array[2].value == ("O") && @board_array[5].value == ("O") && @board_array[8].value == ("O")
+
+
+      # diagonals
+      return true if @board_array[0].value == ("X") && @board_array[4].value == ("X") && @board_array[8].value == ("X")
+      return true if @board_array[2].value == ("X") && @board_array[4].value == ("X") && @board_array[6].value == ("X")
+      return true if @board_array[0].value == ("O") && @board_array[4].value == ("O") && @board_array[8].value == ("O")
+      return true if @board_array[2].value == ("O") && @board_array[4].value == ("O") && @board_array[6].value == ("O")
+
+      false
+    end
+    def victory?
+      #TO DO : une méthode qui vérifie le plateau et indique s'il y a un vainqueur ou match nul
+    end
+
   end
 
-  def update_board_array(num)
-
-
-
-  end
-
-  def victory?
-    #TO DO : une méthode qui vérifie le plateau et indique s'il y a un vainqueur ou match nul
-  end
-
-end
