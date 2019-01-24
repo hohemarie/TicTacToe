@@ -1,5 +1,5 @@
 class BoardCase
-	attr_accessor :value :board_case
+	attr_accessor :value, :board_case
   #TO DO : la classe a 2 attr_accessor, sa valeur en string (X, O, ou vide), ainsi que son identifiant de case
 
   

@@ -1,3 +1,6 @@
+require 'show'
+require 'board'
+
 class Player
   attr_accessor :name, :avatar
 
@@ -6,5 +9,6 @@ class Player
     puts "nom du joueur :"
     @name = gets.chomp
     @avatar = avatar
+
   end
 end

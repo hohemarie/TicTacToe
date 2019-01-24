@@ -2,13 +2,19 @@ require 'board'
 
 class Show
 
-  def show_board(board)
-    board = Board.new
-    puts " #{board[0]} | #{board[1]} | #{board[2]} "
+	def initialize
+		    @@board = Board.new
+
+	end
+
+  def show_board(board_array)
+  	board_array = board_array
+
+    puts " #{@@board.board_array[0].value} | #{@@board.board_array[1].value} | #{@@board.board_array[2].value} "
     puts "-----------"
-    puts " #{board[3]} | #{board[4]} | #{board[5]} "
+    puts " #{@@board.board_array[3].value} | #{@@board.board_array[4].value} | #{@@board.board_array[5].value} "
     puts "-----------"
-    puts " #{board[6]} | #{board[7]} | #{board[8]} "
+    puts " #{@@board.board_array[6].value} | #{@@board.board_array[7].value} | #{@@board.board_array[8].value} "
     #TO DO : affiche sur le terminal l'objet de classe Board en entrée. S'active avec un Show.new.show_board(instance_de_Board)
   end
 
