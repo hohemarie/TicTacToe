@@ -90,6 +90,16 @@ end
       return true if @board_array[6].value == ("X") && @board_array[7].value == ("X") && @board_array[8].value == ("X") 
               
     end
-
+    def victory_O
+      return true if @board_array[0].value == ("O") && @board_array[4].value == ("O") && @board_array[8].value == ("O")
+      return true if @board_array[2].value == ("O") && @board_array[4].value == ("O") && @board_array[6].value == ("O") 
+      return true if @board_array[0].value == ("O") && @board_array[3].value == ("O") && @board_array[6].value == ("O")
+      return true if @board_array[1].value == ("O") && @board_array[4].value == ("O") && @board_array[7].value == ("O")
+      return true if @board_array[2].value == ("O") && @board_array[5].value == ("O") && @board_array[8].value == ("O")
+      return true if @board_array[0].value == ("O") && @board_array[1].value == ("O") && @board_array[2].value == ("O")
+      return true if @board_array[3].value == ("O") && @board_array[4].value == ("O") && @board_array[5].value == ("X")
+      return true if @board_array[6].value == ("O") && @board_array[7].value == ("O") && @board_array[8].value == ("O") 
+              
+    end
   end
 >>>>>>> c386d4e1ea5ec087402ba504d70ad815ca13e672
