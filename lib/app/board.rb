@@ -19,6 +19,7 @@ class Board
 
 
   def play_turn(avatar)
+
     case_choice = ""
     
     while !case_choice.to_i.between?(1,9) do
@@ -48,6 +49,7 @@ class Board
       return true if @board_array[3].value == ("O") && @board_array[4].value == ("O") && @board_array[5].value == ("O")
       return true if @board_array[6].value == ("O") && @board_array[7].value == ("O") && @board_array[8].value == ("O")
 
+
       # columns
       return true if @board_array[0].value == ("X") && @board_array[3].value == ("X") && @board_array[6].value == ("X")
       return true if @board_array[1].value == ("X") && @board_array[4].value == ("X") && @board_array[7].value == ("X")
@@ -55,6 +57,7 @@ class Board
       return true if @board_array[0].value == ("O") && @board_array[3].value == ("O") && @board_array[6].value == ("O")
       return true if @board_array[1].value == ("O") && @board_array[4].value == ("O") && @board_array[7].value == ("O")
       return true if @board_array[2].value == ("O") && @board_array[5].value == ("O") && @board_array[8].value == ("O")
+
 
       # diagonals
       return true if @board_array[0].value == ("X") && @board_array[4].value == ("X") && @board_array[8].value == ("X")
@@ -69,3 +72,4 @@ class Board
     end
 
   end
+
