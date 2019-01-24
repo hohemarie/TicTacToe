@@ -1,8 +1,10 @@
 class Player
-	attr_accessor :name
+  attr_accessor :name, :avatar
 
-	def initialize
-		puts "nom du joueur :"
-		@name = gets.chomp
-	end
+  # avatar represente le player avec un X ou un O
+  def initialize(avatar)
+    puts "nom du joueur :"
+    @name = gets.chomp
+    @avatar = avatar
+  end
 end
