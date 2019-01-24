@@ -1,4 +1,3 @@
-
 # Permet d'éviter de faire un require dans chaque fichier
 # Il suffit que le Gemfile soit bien complété
 require 'bundler'

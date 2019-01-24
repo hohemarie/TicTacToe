@@ -2,10 +2,10 @@ require 'board'
 
 class Show
 
-	def initialize
-		    @@board = Board.new
+  def initialize
+        @@board = Board.new
 
-	end
+  end
 
   def self.show_board(board_array)
     puts " #{board_array[0].value} | #{board_array[1].value} | #{board_array[2].value} "
